@@ -1,0 +1,85 @@
+.Subscribe_items_main{
+padding: 2rem;
+background-color: #121618;
+
+border-bottom: 1px solid gray;
+overflow-x: hidden;
+}
+
+.Subscribe_items_Heading{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: 2.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Subscribe_items_Mail_part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.Subscribe_items_Mail_part form {
+    display: flex;
+    /* gap: 1rem; */
+    justify-content: center;
+    flex-wrap: nowrap; /* always stay in one row */
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+.Subscribe_items_Mail_part input {
+    padding: 1rem;
+    font-weight: 700;
+    color: lightblue;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: transparent;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 40rem;
+    transition: max-width 0.3s ease;
+}
+
+.Subscribe_items_Mail_part input:focus {
+    border-color: gold;
+    outline: none;
+}
+
+.Subscribe_items_Mail_part button {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: gold;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Hover effect */
+.Subscribe_items_Mail_part button:hover {
+    background-color: orange;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .Subscribe_items_main{
+        padding-left: 2rem;
+    }
+    .Subscribe_items_Mail_part input {
+        width: 40rem;
+    }
+    .Subscribe_items_form button{
+        width: 80%;
+    }
+}
