@@ -1,0 +1,173 @@
+.main {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    max-height: 500px;
+}
+
+/* Slide wrapper with background overlay */
+.slide-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    opacity: 0.5;
+}
+
+.gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    user-select: none;
+}
+.nav-btn.left {
+    left: 10px;
+}
+.nav-btn.right {
+    right: 10px;
+}
+
+/* Pizza box animation */
+.pizzaBox {
+    position: absolute;
+    bottom: 0%;
+    right: -100%;
+    width: 350px;
+    height: 350px;
+    transition: right 0.5s ease-in-out;
+    z-index: 2;
+}
+.pizza {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes animate-pizza {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pizza {
+    animation: animate-pizza 1s ease;
+}
+
+/* Slide text */
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.slide-text.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.text-top, .text-bottom {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 0.5s ease;
+}
+.slide-text.show .text-top {
+    opacity: 1;
+    transform: translateY(0);
+}
+.slide-text.show .text-bottom {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+@media (max-width: 768px) {
+    .main {
+        height: 50vh;
+    }
+
+    .pizzaBox {
+        width: 100px;
+        height: 100px;
+        bottom: 5%;
+    }
+
+    .text-top, .text-bottom {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    .slide-text {
+        width: 80%;
+    }
+
+    .nav-btn {
+        padding: 8px 10px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        height: 45vh;
+    }
+
+    .pizzaBox {
+        width: 80px;
+        height: 80px;
+        bottom: 4%;
+    }
+
+    .text-top, .text-bottom {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin: 6px 0;
+    }
+
+    .slide-text {
+        width: 85%;
+        top: 55%;
+        left: 5%;
+    }
+
+    .nav-btn {
+        font-size: 1rem;
+        padding: 6px 8px;
+    }
+}
