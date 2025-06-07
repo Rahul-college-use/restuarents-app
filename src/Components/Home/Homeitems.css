@@ -83,12 +83,22 @@
 
 .home_items_price {
     color: #fff;
+    margin-right: 5px;
     font-weight: 700;
     letter-spacing: 4px;
     margin-bottom: .3rem;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
+    
+}
+.blink{
 
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .home_items_col:hover .home_items_price {
@@ -109,4 +119,37 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
+}
+.price_tag{
+    display: flex;
+}
+.home_items_discount span{
+    color: lightskyblue;
+
+}
+.home_items_discount {
+    color: lightgreen;
+}
+.home_items_after_discount{
+    margin-left: 6px;
+    color: yellow;
+}
+
+/* Small Mobile Phones (e.g., 320px to 480px) */
+@media only screen and (max-width: 480px) {
+  /* Styles for small mobile devices */
+  .home_items_details{
+    text-align: center;
+    width: 70%;
+  }
+}
+
+/* Medium Mobile Phones and Large Phones (e.g., up to 600px) */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  /* Styles for medium to large mobile devices */
+}
+
+/* Tablets (Portrait and Landscape) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablets */
 }

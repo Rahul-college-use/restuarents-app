@@ -5,6 +5,11 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 
 function PizzaDetailPage() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
     const location = useLocation();
     const pizza = location.state || {};
 
@@ -17,6 +22,7 @@ function PizzaDetailPage() {
 
     const convertedPrice = Math.round(pizza.price * 85);
     const totalPrice = convertedPrice * quantity;
+    const dis_price = pizza.after_discount * quantity;
 
     return (
         <>
@@ -29,7 +35,29 @@ function PizzaDetailPage() {
 
                     <div className="pizza-details">
                         <h1>{pizza.name?.toUpperCase()}</h1>
-                        <h2 className="pizza-price">₹{totalPrice}</h2>
+
+
+                        <div className='pizza-details_amount'>
+                            <h2 className={`pizza-price ${pizza.discount >= 40 ? 'blink' : ""}`} style={
+                                (pizza.discount) >= 40 ? { textDecoration: "line-through", color: "red" } : {}
+                            }>₹{totalPrice}</h2>
+
+                            {(pizza.discount) >= 40 && (pizza.discount) < 90 ?
+
+                                <>
+                                    <span>
+                                        <i class="ri-discount-percent-fill"></i>
+                                    </span>
+                                    <p>  {`Upto  ${pizza.discount} %`}</p>
+
+                                    <h2 className='pizza-price'> {`₹${dis_price}`}</h2>
+
+                                </>
+
+                                : ""}
+
+
+                        </div>
 
                         <p className="pizza-description">
                             {pizza.details + `Classic marinara sauce, authentic old-world pepperoni, all-natural Italian sausage, slow-roasted ham, hardwood smoked bacon, seasoned pork and beef. Best on our hand-tossed crust.`}
@@ -39,6 +67,7 @@ function PizzaDetailPage() {
                             <input
                                 type="number"
                                 min="1"
+                                max="10"
                                 value={quantity}
                                 onChange={handleQuantityChange}
                                 className="quantity-input"

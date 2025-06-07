@@ -16,6 +16,10 @@
   flex-shrink: 0;
 }
 
+.pizza-image-container img {
+  border: none;
+}
+
 .pizza-image {
   width: 300px;
   height: 300px;
@@ -29,7 +33,7 @@
 }
 
 .pizza-price {
-  color: #fbbf24;
+  color: lightgreen;
   font-size: 24px;
 }
 
@@ -105,4 +109,60 @@
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+.pizza-details_amount{
+  display: flex;
+  color: lightblue;
+
+}
+.pizza-details_amount p{
+  margin-right: 4px;
+}
+.pizza-details_amount span{
+  margin-left: 5px;
+  color: lightseagreen;
+}
+
+.blink{
+
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Small Mobile Phones (e.g., 320px to 480px) */
+@media only screen and (max-width: 480px) {
+
+  /* Styles for small mobile devices */
+  .pizza-detail-page,.pizza-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .pizza-meta{
+    padding-bottom: 20px;
+  }
+ .pizza-sidebar{
+  padding-top: 50px;
+  margin-left: 0;
+  border-top: 2px solid white;
+
+ }
+
+}
+
+/* Medium Mobile Phones and Large Phones (e.g., up to 600px) */
+@media only screen and (min-width: 481px) and (max-width: 900px) {
+  /* Styles for medium to large mobile devices */
+  .pizza-detail-page{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Tablets (Portrait and Landscape) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablets */
 }

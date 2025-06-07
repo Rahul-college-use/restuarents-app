@@ -171,3 +171,33 @@
         padding: 6px 8px;
     }
 }
+
+/* Small Mobile Phones (e.g., 320px to 480px) */
+@media only screen and (max-width: 480px) {
+  /* Styles for small mobile devices */
+   .slide-text{
+    z-index: 10;
+   }
+  .pizzaBox {
+    height: 300px;
+    width: 250px;
+    /* background: #000; */
+
+  }
+  .pizzaBox img{
+    height: 80%;
+    position: absolute;
+    right: -100px;
+    z-index: -1;
+  }
+}
+
+/* Medium Mobile Phones and Large Phones (e.g., up to 600px) */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  /* Styles for medium to large mobile devices */
+}
+
+/* Tablets (Portrait and Landscape) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablets */
+}

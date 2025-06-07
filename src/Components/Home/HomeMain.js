@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import table from '../../assets/table.jpg';
 import pizza from '../../assets/pizza.gif';
 import burger from '../../assets/burger.png';
 import dessert from '../../assets/Prosciutto.gif';
@@ -83,7 +82,7 @@ function HomeMain() {
     return (
         <div className="main">
             {/* Slides */}
-            {[table, table, table].map((src, idx) => (
+            {['https://wallpaperaccess.com/full/4603933.jpg', 'https://wallpaperaccess.com/full/4603933.jpg', 'https://wallpaperaccess.com/full/4603933.jpg'].map((src, idx) => (
                 <div className="slide-wrapper" key={idx}>
                     <img
                         src={src}
@@ -114,7 +113,7 @@ function HomeMain() {
                     className="pizzaBox"
                     ref={(el) => (imageBoxesRef.current[idx] = el)}
                 >
-                    <img src={img} className="pizza" alt="" />
+                    <img src={img} className="pizza"  alt="" />
                 </div>
             ))}
 
